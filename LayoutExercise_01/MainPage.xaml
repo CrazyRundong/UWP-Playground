@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="LayoutExercise_01.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LayoutExercise_01"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Margin="10, 0, 0, 0" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--  Title and text -->
+        <TextBlock x:Name="title" Grid.ColumnSpan="3" Grid.Column="0" 
+                   FontSize="48" HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="20, 0, 0, 10">
+            录入你的信息
+        </TextBlock>
+
+        <TextBlock x:Name="lastNameBlock" Grid.Row="1" FontSize="24" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="20, 10, 0, 10">
+            姓氏
+        </TextBlock>
+
+        <TextBlock x:Name="firstNameBlock" Grid.Row="2" FontSize="24" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="20, 10, 0, 10">
+            名字
+        </TextBlock>
+
+        <TextBlock x:Name="emailBlock" Grid.Row="3" FontSize="24" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center"
+                   Margin="20, 10, 0, 10">
+            邮箱地址
+        </TextBlock>
+        
+        <!-- Text inputs -->
+        <TextBox x:Name ="lastNameBox"  Grid.Column="1" Grid.Row="1"
+                   Margin="0, 0, 0, 10"/>
+        <TextBox x:Name ="firstNameBox" Grid.Column="1" Grid.Row="2"
+                   Margin="0, 0, 0, 10"/>
+        <TextBox x:Name ="emailBox" Grid.Column="1" Grid.Row="3"
+                   Margin="0, 0, 0, 10"/>
+        
+        <!-- Buttom -->
+        <Button x:Name="sureButton" Content="确定" Grid.Column="1" HorizontalAlignment="Left" Margin="20,10,0,10" Grid.Row="4" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
