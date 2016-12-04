@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="Stupendous_Styles_Challenge.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Stupendous_Styles_Challenge"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Style="{StaticResource NavButtonStyle}" 
+                    Grid.Column="0">
+                <StackPanel Style="{StaticResource NavContentStyle}">
+                    <Image Source="Img/donut-icon.png" Height="50"/>
+                    <TextBlock  Style="{StaticResource NavTextStyle}" 
+                                Text="Donuts" />
+                </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource NavButtonStyle}" 
+                    Grid.Column="1">
+                <StackPanel Style="{StaticResource NavContentStyle}">
+                    <Image Source="Img/coffee-icon.png" Height="50"/>
+                    <TextBlock  Style="{StaticResource NavTextStyle}" 
+                                Text="Coffee" />
+                </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource NavButtonStyle}" 
+                    Grid.Column="2">
+                <StackPanel Style="{StaticResource NavContentStyle}">
+                    <Image Source="Img/schedule-icon.png" Height="50"/>
+                    <TextBlock  Style="{StaticResource NavTextStyle}" 
+                                Text="Schedule" />
+                </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource NavButtonStyle}" 
+                    Grid.Column="3">
+                <StackPanel Style="{StaticResource NavContentStyle}">
+                    <Image Source="Img/complete-icon.png" Height="50"/>
+                    <TextBlock  Style="{StaticResource NavTextStyle}" 
+                                Text="Complete" />
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <Frame Name="MainFrame" Grid.Row="1">
+            
+        </Frame>
+    </Grid>
+</Page>
