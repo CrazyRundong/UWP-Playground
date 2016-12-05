@@ -7,7 +7,42 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <Grid Background="Red"
+              Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Image Source="Img/white-logo.png" 
+                   Style="{StaticResource WhiteLogoStyle}"/>
+
+            <RelativePanel Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
+                <TextBlock Name="title1"
+                           Style="{StaticResource SlideTextStyle}">
+                    Original Glazed Count:
+                </TextBlock>
+                <Slider Style="{StaticResource SlideStyle}"
+                        RelativePanel.AlignRightWith="title1" />
+            </RelativePanel>
+        </Grid>
     </Grid>
 </Page>

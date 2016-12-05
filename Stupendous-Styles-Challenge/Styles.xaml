@@ -22,4 +22,24 @@
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
+
+    <Style TargetType="Image" x:Key="WhiteLogoStyle">
+        <Setter Property="Grid.Row" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="SlideTextStyle">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="10,0,10,0" />
+        <Setter Property="RelativePanel.AlignLeftWithPanel" Value="True" />
+        <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True" />
+    </Style>
+
+    <Style TargetType="Slider" x:Key="SlideStyle">
+        <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True" />
+        <Setter Property="Maximum" Value="46" />
+        <Setter Property="Minimum" Value="0" />
+    </Style>
 </ResourceDictionary>

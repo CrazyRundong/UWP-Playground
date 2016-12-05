@@ -95,13 +95,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\CoffeePage.xaml.cs">
+    <Compile Include="CoffeePage.xaml.cs">
       <DependentUpon>CoffeePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\CompletePage.xaml.cs">
+    <Compile Include="CompletePage.xaml.cs">
       <DependentUpon>CompletePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Assets\SchedulePage.xaml.cs">
+    <Compile Include="SchedulePage.xaml.cs">
       <DependentUpon>SchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DonutPage.xaml.cs">
@@ -146,15 +146,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Assets\CoffeePage.xaml">
+    <Page Include="CoffeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Assets\CompletePage.xaml">
+    <Page Include="CompletePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Assets\SchedulePage.xaml">
+    <Page Include="SchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

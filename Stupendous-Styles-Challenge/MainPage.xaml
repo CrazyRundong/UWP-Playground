@@ -29,7 +29,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Style="{StaticResource NavButtonStyle}" 
+            <Button Name="DonutsButton"
+                    Click="DonutsButton_Click"
+                    Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="0">
                 <StackPanel Style="{StaticResource NavContentStyle}">
                     <Image Source="Img/donut-icon.png" Height="50"/>
@@ -38,7 +40,9 @@
                 </StackPanel>
             </Button>
 
-            <Button Style="{StaticResource NavButtonStyle}" 
+            <Button Name="CoffeeButtom"
+                    Click="CoffeeButtom_Click"
+                    Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="1">
                 <StackPanel Style="{StaticResource NavContentStyle}">
                     <Image Source="Img/coffee-icon.png" Height="50"/>
@@ -47,7 +51,9 @@
                 </StackPanel>
             </Button>
 
-            <Button Style="{StaticResource NavButtonStyle}" 
+            <Button Name="ScheduleButtom"
+                    Click="ScheduleButtom_Click"
+                    Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="2">
                 <StackPanel Style="{StaticResource NavContentStyle}">
                     <Image Source="Img/schedule-icon.png" Height="50"/>
@@ -56,7 +62,9 @@
                 </StackPanel>
             </Button>
 
-            <Button Style="{StaticResource NavButtonStyle}" 
+            <Button Name="CompleteButtom"
+                    Click="CompleteButtom_Click"
+                    Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="3">
                 <StackPanel Style="{StaticResource NavContentStyle}">
                     <Image Source="Img/complete-icon.png" Height="50"/>
