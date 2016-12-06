@@ -33,16 +33,33 @@
             <Image Source="Img/white-logo.png" 
                    Style="{StaticResource WhiteLogoStyle}"/>
 
-            <RelativePanel Grid.Row="1"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch">
-                <TextBlock Name="title1"
-                           Style="{StaticResource SlideTextStyle}">
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Style="{StaticResource SlideTextStyle}">
                     Original Glazed Count:
                 </TextBlock>
-                <Slider Style="{StaticResource SlideStyle}"
-                        RelativePanel.AlignRightWith="title1" />
-            </RelativePanel>
+                <Slider Style="{StaticResource SlideStyle}" />
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource SlideTextStyle}">
+                    Speedway Special Count:
+                </TextBlock>
+                <Slider Style="{StaticResource SlideStyle}" />
+            </Grid>
         </Grid>
+
+        <Image Grid.Column="1"
+               Stretch="UniformToFill"
+            Source="Img/background.jpg" />
     </Grid>
 </Page>

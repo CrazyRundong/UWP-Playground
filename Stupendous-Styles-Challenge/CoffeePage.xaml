@@ -7,7 +7,93 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <Grid Background="#3C1F19"
+              Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Image Source="Img/white-logo.png" 
+                   Style="{StaticResource WhiteLogoStyle}"/>
+
+            <StackPanel Grid.Row="1"
+                        Style="{StaticResource NavContentStyle}">
+                <Button Content="Roast"
+                        Style="{StaticResource SelectButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="Top">
+                            <MenuFlyoutItem Text="None"
+                                            Name="RoastNone"
+                                            Click="RoastNone_Click"/>
+                            <MenuFlyoutItem Text="Dark" 
+                                            Name="RoastFark"
+                                            Click="RoastFark_Click"/>
+                            <MenuFlyoutItem Text="Medium" 
+                                            Name="RoastMedium"
+                                            Click="RoastMedium_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+
+                <Button Content="Sweetener"
+                        Style="{StaticResource SelectButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="Top">
+                            <MenuFlyoutItem Text="None"
+                                            Name="SweeterNone"
+                                            Click="SweeterNone_Click"/>
+                            <MenuFlyoutItem Text="Sweeter"
+                                            Name="SweeterSuger"
+                                            Click="SweeterSuger_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+
+                <Button Content="Cream"
+                        Style="{StaticResource SelectButtonStyle}">
+                    <Button.Flyout>
+                        <MenuFlyout Placement="Top">
+                            <MenuFlyoutItem Text="None"
+                                            Name="CreamNone"
+                                            Click="CreamNone_Click"/>
+                            <MenuFlyoutItem Text="5% Milk"
+                                            Name="Cream5Milk"
+                                            Click="Cream5Milk_Click"/>
+                            <MenuFlyoutItem Text="Full-milk"
+                                            Name="CreamFullMilk"
+                                            Click="CreamFullMilk_Click"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Name="CoffeeText" 
+                       Style="{StaticResource SlideTextStyle}"
+                       Grid.Row="2"
+                       Text="Coffee:    "/>
+
+        </Grid>
+
+        <Image Grid.Column="1"
+               Stretch="UniformToFill"
+            Source="Img/background.jpg" />
+        
     </Grid>
 </Page>

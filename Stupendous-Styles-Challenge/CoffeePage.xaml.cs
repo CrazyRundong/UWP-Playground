@@ -23,5 +23,45 @@ namespace Stupendous_Styles_Challenge {
         public CoffeePage() {
             this.InitializeComponent();
         }
+
+        private string _coffeeText = "Coffee:\t";
+        private string _coffeeRoast = "";
+        private string _coffeeSweeter = "";
+        private string _coffeeCream = "";
+
+        private void RoastNone_Click(object sender, RoutedEventArgs e) {
+            _coffeeRoast = "";
+
+        }
+
+        private void RoastFark_Click(object sender, RoutedEventArgs e) {
+            _coffeeRoast = RoastFark.Text;
+
+        }
+
+        private void RoastMedium_Click(object sender, RoutedEventArgs e) {
+            _coffeeRoast = RoastMedium.Text;
+
+        }
+
+        private void SweeterNone_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void SweeterSuger_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void CreamNone_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void Cream5Milk_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void CreamFullMilk_Click(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
