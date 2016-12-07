@@ -25,43 +25,47 @@ namespace Stupendous_Styles_Challenge {
         }
 
         private string _coffeeText = "Coffee:\t";
-        private string _coffeeRoast = "";
-        private string _coffeeSweeter = "";
-        private string _coffeeCream = "";
+        private string _coffeeRoast = String.Empty;
+        private string _coffeeSweeter = String.Empty;
+        private string _coffeeCream = String.Empty;
 
         private void RoastNone_Click(object sender, RoutedEventArgs e) {
-            _coffeeRoast = "";
-
+            CoffeeText.Text = _coffeeText;
         }
 
         private void RoastFark_Click(object sender, RoutedEventArgs e) {
             _coffeeRoast = RoastFark.Text;
-
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
 
         private void RoastMedium_Click(object sender, RoutedEventArgs e) {
             _coffeeRoast = RoastMedium.Text;
-
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
 
         private void SweeterNone_Click(object sender, RoutedEventArgs e) {
-
+            _coffeeSweeter = $"with {SweeterNone.Text} sugar";
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
 
         private void SweeterSuger_Click(object sender, RoutedEventArgs e) {
-
+            _coffeeSweeter = $"with {SweeterSuger.Text} sugar";
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
 
         private void CreamNone_Click(object sender, RoutedEventArgs e) {
-
+            _coffeeCream = $"and {CreamNone.Text} cream";
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
 
         private void Cream5Milk_Click(object sender, RoutedEventArgs e) {
-
+            _coffeeCream = $"and {Cream5Milk.Text} cream";
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
 
         private void CreamFullMilk_Click(object sender, RoutedEventArgs e) {
-
+            _coffeeCream = $"and {CreamFullMilk.Text} cream";
+            CoffeeText.Text = $"{_coffeeText} {_coffeeRoast}, {_coffeeSweeter}, {_coffeeCream}";
         }
     }
 }
