@@ -43,7 +43,7 @@
                 <StackPanel Grid.Column="1" 
                             Orientation="Vertical">
                     
-                    <DatePicker Style="{StaticResource DatePickerStyle}" />
+                    <CalendarDatePicker Style="{StaticResource DatePickerStyle}" />
                     <TimePicker Style="{StaticResource TimePickerStyle}" />
                 </StackPanel>
             </Grid>

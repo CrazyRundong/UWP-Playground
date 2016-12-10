@@ -19,7 +19,7 @@
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Column="0"
               Background="White">
             <Grid.RowDefinitions>
@@ -30,17 +30,20 @@
             <Image Source="Img/color-logo.png" 
                    Style="{StaticResource WhiteLogoStyle}"/>
 
-            <Canvas Grid.Row="1">
-                <Image Source="Img/ticket.jpg"
+
+            <Image Grid.Row="1"
+                       Source="Img/ticket.jpg"
                        Canvas.ZIndex="0"
                        HorizontalAlignment="Center"/>
-                <TextBlock Canvas.ZIndex="1"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center">
-                    Order 96
-                </TextBlock>
-            </Canvas>
-            
+            <StackPanel Grid.Row="1"
+                        Orientation="Vertical"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock FontSize="36"
+                           Text="Order"/>
+                <TextBlock FontSize="64"
+                           Text="29"/>
+            </StackPanel>
         </Grid>
 
         <Image Grid.Column="1"
