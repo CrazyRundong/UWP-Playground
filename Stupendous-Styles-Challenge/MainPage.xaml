@@ -34,7 +34,7 @@
                     Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="0">
                 <StackPanel Style="{StaticResource NavContentStyle}">
-                    <Image Source="Img/donut-icon.png" Height="50"/>
+                    <Image Source="Img/donut-icon.png" Height="40"/>
                     <TextBlock  Style="{StaticResource NavTextStyle}" 
                                 Text="Donuts" />
                 </StackPanel>
@@ -45,7 +45,7 @@
                     Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="1">
                 <StackPanel Style="{StaticResource NavContentStyle}">
-                    <Image Source="Img/coffee-icon.png" Height="50"/>
+                    <Image Source="Img/coffee-icon.png" Height="40"/>
                     <TextBlock  Style="{StaticResource NavTextStyle}" 
                                 Text="Coffee" />
                 </StackPanel>
@@ -56,7 +56,7 @@
                     Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="2">
                 <StackPanel Style="{StaticResource NavContentStyle}">
-                    <Image Source="Img/schedule-icon.png" Height="50"/>
+                    <Image Source="Img/schedule-icon.png" Height="40"/>
                     <TextBlock  Style="{StaticResource NavTextStyle}" 
                                 Text="Schedule" />
                 </StackPanel>
@@ -67,7 +67,7 @@
                     Style="{StaticResource NavButtonStyle}" 
                     Grid.Column="3">
                 <StackPanel Style="{StaticResource NavContentStyle}">
-                    <Image Source="Img/complete-icon.png" Height="50"/>
+                    <Image Source="Img/complete-icon.png" Height="40"/>
                     <TextBlock  Style="{StaticResource NavTextStyle}" 
                                 Text="Complete" />
                 </StackPanel>

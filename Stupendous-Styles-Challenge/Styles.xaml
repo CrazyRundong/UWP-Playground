@@ -7,6 +7,8 @@
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="Background" Value="Black" />
+        <Setter Property="BorderBrush" Value="Gray"/>
+        <Setter Property="BorderThickness" Value="0,0,2,0"/>
     </Style>
 
     <Style TargetType="StackPanel" x:Key="NavContentStyle">
@@ -19,8 +21,8 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="10,0,0,0" />
-        <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
 
     <Style TargetType="Image" x:Key="WhiteLogoStyle">
@@ -49,5 +51,14 @@
         <Setter Property="FontSize" Value="18" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="10,0,10,0" />
+    </Style>
+
+    <Style x:Key="TimePickerStyle" TargetType="TimePicker">
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="ClockIdentifier" Value="12HourClock" />
+    </Style>
+    
+    <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+        <Setter Property="Margin" Value="0,0,0,10" />
     </Style>
 </ResourceDictionary>
