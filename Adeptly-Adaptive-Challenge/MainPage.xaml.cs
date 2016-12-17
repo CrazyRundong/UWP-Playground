@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
-namespace Stupendous_Styles_Challenge
+namespace Adeptly_Adaptive_Challenge
 {
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
@@ -25,27 +25,11 @@ namespace Stupendous_Styles_Challenge
         public MainPage()
         {
             this.InitializeComponent();
-            MainFrame.Navigate(typeof(DonutPage));
         }
 
-        private void DonutsButton_Click(object sender, RoutedEventArgs e)
+        private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(typeof(DonutPage));
-        }
-
-        private void CoffeeButtom_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(CoffeePage));
-        }
-
-        private void ScheduleButtom_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(SchedulePage));
-        }
-
-        private void CompleteButtom_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(CompletePage));
+            throw new NotImplementedException();
         }
     }
 }
