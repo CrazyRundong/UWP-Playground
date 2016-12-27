@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Adeptly_Adaptive_Challenge.Models;
 
 //“空白页”项模板在 http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409 上有介绍
 
@@ -22,14 +24,46 @@ namespace Adeptly_Adaptive_Challenge
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ObservableCollection<NewsItem> _news;
+
         public MainPage()
         {
             this.InitializeComponent();
+            _news = ItemFactory.getNewsItems();
         }
 
         private void HamburgerButton_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            MainSplitView.IsPaneOpen = !MainSplitView.IsPaneOpen;
+        }
+
+        private void DisplaySubject_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // TODO(Rundong): very stupid code, modify it!
+            if (FinaSec.IsSelected)
+            {
+                var tempList = from item in ItemFactory.getNewsItems()
+                               where item.Category == "Financial"
+                               select item;
+                _news.Clear();
+                foreach (var item in tempList)
+                {
+                    _news.Add(item);
+                }
+                Title.Text = "Financial";
+            }
+            else if (FoodSec.IsSelected)
+            {
+                var tempList = from item in ItemFactory.getNewsItems()
+                               where item.Category == "Food"
+                               select item;
+                _news.Clear();
+                foreach (var item in tempList)
+                {
+                    _news.Add(item);
+                }
+                Title.Text = "Food";
+            }
         }
     }
 }
