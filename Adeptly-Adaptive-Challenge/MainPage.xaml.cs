@@ -42,26 +42,12 @@ namespace Adeptly_Adaptive_Challenge
             // TODO(Rundong): very stupid code, modify it!
             if (FinaSec.IsSelected)
             {
-                var tempList = from item in ItemFactory.getNewsItems()
-                               where item.Category == "Financial"
-                               select item;
-                _news.Clear();
-                foreach (var item in tempList)
-                {
-                    _news.Add(item);
-                }
+                ItemFactory.FilterItem("Financial", _news);
                 Title.Text = "Financial";
             }
             else if (FoodSec.IsSelected)
             {
-                var tempList = from item in ItemFactory.getNewsItems()
-                               where item.Category == "Food"
-                               select item;
-                _news.Clear();
-                foreach (var item in tempList)
-                {
-                    _news.Add(item);
-                }
+                ItemFactory.FilterItem("Food", _news);
                 Title.Text = "Food";
             }
         }

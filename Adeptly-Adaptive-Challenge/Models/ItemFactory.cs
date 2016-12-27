@@ -117,5 +117,14 @@ namespace Adeptly_Adaptive_Challenge.Models
 
             return items;
         }
+
+        public static void FilterItem(string category, ObservableCollection<NewsItem> listIn)
+        {
+            var tempList = from item in ItemFactory.getNewsItems()
+                           where item.Category == category
+                           select item;
+            listIn.Clear();
+            tempList.ToList().ForEach(p => listIn.Add(p));
+        }
     }
 }

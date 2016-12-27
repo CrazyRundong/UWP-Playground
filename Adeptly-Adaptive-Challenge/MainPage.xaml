@@ -7,12 +7,12 @@
     xmlns:data="using:Adeptly_Adaptive_Challenge.Models"
     xmlns:adeptlyAdaptiveChallenge="using:Adeptly_Adaptive_Challenge"
     mc:Ignorable="d">
-    
+
     <Page.Resources>
-        <DataTemplate x:DataType="data:NewsItem" 
+        <DataTemplate x:DataType="data:NewsItem"
                       x:Key="NewsItemTemplate">
             <adeptlyAdaptiveChallenge:WidthControl HorizontalAlignment="Stretch"
-                                                   VerticalAlignment="Stretch"/>
+                                                   VerticalAlignment="Stretch" />
         </DataTemplate>
     </Page.Resources>
 
@@ -22,24 +22,49 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TopSearch.Visibility" Value="Collapsed" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="400" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TopSearch.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <RelativePanel Grid.Row="0">
             <StackPanel RelativePanel.AlignLeftWithPanel="True"
-                        Orientation="Horizontal">
-                <Button FontFamily="Segoe MDL2 Assets"
-                        FontSize="36"
-                        Content="&#xE700;"
-                        Name="HamburgerButton"
-                        Click="HamburgerButton_OnClick" />
-                <TextBlock FontSize="36"
-                           Margin="10,0,0,0"
-                           Name="Title"/>
-            </StackPanel>
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+                        Orientation="Horizontal" />
+            <Button RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="36"
+                    Content="&#xE700;"
+                    Name="HamburgerButton"
+                    Click="HamburgerButton_OnClick" />
+            <TextBlock RelativePanel.RightOf="HamburgerButton"
+                       FontSize="36"
+                       Margin="10,0,0,0"
+                       Name="Title" />
 
-            <StackPanel RelativePanel.AlignRightWithPanel="True"
-                        Orientation="Horizontal">
-                <SearchBox VerticalAlignment="Center" 
-                           Name="TopSearch"/>
-            </StackPanel>
+            <AutoSuggestBox RelativePanel.AlignRightWithPanel="True"
+                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                            QueryIcon="Find"
+                            PlaceholderText="Search"
+                            Width="200"
+                            Margin="0,0,10,0"
+                            Name="TopSearch" />
 
         </RelativePanel>
 
@@ -71,7 +96,8 @@
 
             <SplitView.Content>
                 <GridView ItemsSource="{x:Bind _news}"
-                          ItemTemplate="{StaticResource NewsItemTemplate}"/>
+                          ItemTemplate="{StaticResource NewsItemTemplate}"
+                          Margin="10,0,0,0" />
             </SplitView.Content>
         </SplitView>
     </Grid>
