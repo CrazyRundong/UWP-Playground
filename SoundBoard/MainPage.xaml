@@ -1,0 +1,104 @@
+﻿<Page
+    x:Class="SoundBoard.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SoundBoard"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:SoundBoard.Models"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <Style x:Key="NavButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="FontSize" Value="36" />
+            <Setter Property="FontFamily" Value="Segoe MDL2 Assets" />
+            <Setter Property="RelativePanel.AlignVerticalCenterWithPanel" Value="True" />
+        </Style>
+    </Page.Resources>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <RelativePanel Grid.Row="0">
+            
+            <Button Name="HamburgerButton"
+                    Click="HamburgerButton_OnClick"
+                    Content="&#xE700;"
+                    RelativePanel.AlignLeftWithPanel="True" 
+                    Style="{StaticResource NavButtonStyle}" />
+            <Button Name="BackButton"
+                    Click="BackButton_OnClick"
+                    Content="&#xE0A6;"
+                    RelativePanel.RightOf="HamburgerButton"
+                    Style="{StaticResource NavButtonStyle}"/>
+            <AutoSuggestBox Name="SearchSuggestBox"
+                            QueryIcon="Find"
+                            PlaceholderText="Search any sound"
+                            TextChanged="SearchSuggestBox_OnTextChanged"
+                            QuerySubmitted="SearchSuggestBox_OnQuerySubmitted"
+                            Width="250"
+                            RelativePanel.AlignRightWithPanel="True"
+                            RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            
+        </RelativePanel>
+        
+        <SplitView Name="MenuSplitView" 
+                   Grid.Row="1"
+                   DisplayMode="CompactOverlay"
+                   OpenPaneLength="200"
+                   CompactPaneLength="48">
+            <SplitView.Pane>
+                <ListView Name="MenuListView"
+                          ItemsSource="{x:Bind SelectionItem}"
+                          IsItemClickEnabled="True"
+                          SelectionMode="Single"
+                          ItemClick="MenuListView_OnItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:MenuItem">
+                            <RelativePanel Margin="0,5,0,5">
+                                <Image Source="{x:Bind IconPath}"
+                                       Name="ItemIcon"
+                                       Width="28"
+                                       Height="28"
+                                       Margin="-5,0,0,0"
+                                       RelativePanel.AlignLeftWithPanel="True"
+                                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                                <TextBlock Text="{x:Bind ItemName}"
+                                           FontSize="24"
+                                           Margin="15,0,0,0"
+                                           RelativePanel.RightOf="ItemIcon"
+                                           RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                            </RelativePanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </SplitView.Pane>
+            
+            <SplitView.Content>
+                <GridView Name="MainContent"
+                          ItemsSource="{x:Bind Sounds}"
+                          IsItemClickEnabled="True"
+                          SelectionMode="None"
+                          AllowDrop="True"
+                          Drop="MainContent_OnDrop"
+                          DragOver="MainContent_OnDragOver">
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="models:SoundItem">
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="{x:Bind ImgPath}"
+                                       Height="100"
+                                       Width="100"/>
+                                <TextBlock Text="{x:Bind Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
