@@ -23,9 +23,31 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SearchSuggestBox.Width" Value="150"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="400"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SearchSuggestBox.Width" Value="250"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <RelativePanel Grid.Row="0">
-            
+
             <Button Name="HamburgerButton"
                     Click="HamburgerButton_OnClick"
                     Content="&#xE700;"
@@ -41,7 +63,6 @@
                             PlaceholderText="Search any sound"
                             TextChanged="SearchSuggestBox_OnTextChanged"
                             QuerySubmitted="SearchSuggestBox_OnQuerySubmitted"
-                            Width="250"
                             RelativePanel.AlignRightWithPanel="True"
                             RelativePanel.AlignVerticalCenterWithPanel="True"/>
             
@@ -85,20 +106,29 @@
                           IsItemClickEnabled="True"
                           SelectionMode="None"
                           AllowDrop="True"
+                          ItemClick="MainContent_OnItemClick"
                           Drop="MainContent_OnDrop"
-                          DragOver="MainContent_OnDragOver">
+                          DragOver="MainContent_OnDragOver"
+                          Margin="10,5,0,0">
                     <GridView.ItemTemplate>
                         <DataTemplate x:DataType="models:SoundItem">
                             <StackPanel Orientation="Vertical">
                                 <Image Source="{x:Bind ImgPath}"
                                        Height="100"
-                                       Width="100"/>
+                                       Width="100"
+                                       Margin="0,5,5,5"/>
                                 <TextBlock Text="{x:Bind Name}"/>
                             </StackPanel>
                         </DataTemplate>
                     </GridView.ItemTemplate>
                 </GridView>
+                
             </SplitView.Content>
         </SplitView>
+
+        <MediaElement Grid.Row="0" 
+                      Name="MainBackgroundPlayer"
+                      AutoPlay="True"/>
+        
     </Grid>
 </Page>

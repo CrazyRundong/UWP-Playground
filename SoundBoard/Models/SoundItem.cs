@@ -56,26 +56,15 @@ namespace SoundBoard.Models
             return new ObservableCollection<SoundItem>(currentList);
         }
 
-        public static ObservableCollection<SoundItem> FilterItemByCategory(
-            ObservableCollection<SoundItem> listIn,
-            SoundItem.AudioCategory category)
-        {
-            foreach (var p in listIn)
-            {
-                if (p.Catrgory != category)
-                    listIn.Remove(p);
-            }
-            return listIn;
-        }
-
         public static ObservableCollection<SoundItem> FilterItemByName(
             ObservableCollection<SoundItem> listIn,
             string namePrefix)
         {
-            foreach (var p in listIn)
+            var currentList = GenerateSounds().Where(p => p.Name.StartsWith(namePrefix)).ToList();
+            listIn.Clear();
+            foreach (var item in currentList)
             {
-                if (!p.Name.StartsWith(namePrefix))
-                    listIn.Remove(p);
+                listIn.Add(item);
             }
             return listIn;
         }
